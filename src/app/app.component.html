@@ -1,64 +1,36 @@
-<hello name="{{ name }}"></hello>
+<hello [name]="name"></hello>
+<p
+  [style.color]="'red'"
+  [style.backgroundColor]="'yellow'"
+  [style.fontSize.rem]="1.5"
+>
+  Stype and class binding
+</p>
 
-<!-- 
-  $implicit: T: The value of the individual items in the iterable (ngForOf).
-  ngForOf: NgIterable<T>: The value of the iterable expression. Useful when the expression is more complex then a property access, for example when using the async pipe (userStreams | async).
-  index: number: The index of the current item in the iterable.
-  count: number: The length of the iterable.
-  first: boolean: True when the item is the first item in the iterable.
-  last: boolean: True when the item is the last item in the iterable.
-  even: boolean: True when the item has an even index in the iterable.
-  odd: boolean: True when the item has an odd index in the iterable.
- -->
+<p [style]="{ color: 'white', backgroundColor: 'blue', fontSize: '2rem' }">
+  Stype and class binding object
+</p>
 
-<ul>
-  <ng-container *ngIf="users.length > 0; else noUsers">
-    <li
-      *ngFor="
-        let u of users;
-        index as idx;
-        count as total;
-        first as isFirst;
-        last as isLast;
-        even as isEven;
-        odd as isOdd
-      "
-    >
-      <span>{{ u.name }} - {{ u.id }} - {{ u.phone }}</span> <br />
-      <span>ai index {{ idx }} out of {{ total }}</span> <br />
-      <span *ngIf="isEven">I am even number</span> <br />
-      <span *ngIf="isOdd">I am odd number</span><br />
-      <span *ngIf="isLast">I am last</span><br />
-      <span *ngIf="isFirst">I am first</span> <br />
-    </li>
-  </ng-container>
-  <ng-template #noUsers>No user</ng-template>
-</ul>
+<p
+  [style.--text-color]="isDanger ? 'red' : 'white'"
+  [style]="{
+    color: 'var(--text-color)',
+    backgroundColor: 'blue',
+    fontSize: '2rem'
+  }"
+>
+  Stype and class binding object
+</p>
 
-<!-- <ul>
-  <ng-template
-    ngFor
-    [ngForOf]="users"
-    let-u
-    let-idx="index"
-    let-total="count"
-    let-isFirst="first"
-    let-isLast="last"
-    let-isEven="even"
-    let-isOdd="odd"
-  >
-    <li>
-      <span>{{ u.name }}-{{ u.id }}-{{ u.phone }}</span
-      ><br />
-      <span>ai index {{ idx }} out of {{ total }}</span> <br />
-      <span *ngIf="isEven">I am even number</span> <br />
-      <span *ngIf="isOdd">I am odd number</span><br />
-      <span *ngIf="isLast">I am last</span><br />
-      <span *ngIf="isFirst">I am first</span> <br />
-    </li>
-  </ng-template>
-</ul> -->
-
-<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">
-  {{ tag }}
-</button>
+<button (click)="isDanger = !isDanger">Toggle Danger</button> <br /><br />
+<button (click)="isWarning = !isWarning">Toggle Warning</button>
+<div class="box" [class]="['red-border', 'yellow-background']"></div>
+<div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"
+></div>
+<div
+  class="box"
+  [class]="{ 'red-border': isDanger, 'yellow-background': isWarning }"
+></div>
