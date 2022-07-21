@@ -7,13 +7,9 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-  inputType = 'text';
+  show = false;
   user = {
-    name: 'a',
+    name: 'oc cho',
     age: 12,
-  };
-
-  handler = (event) => {
-    console.log('click', event);
   };
 }
