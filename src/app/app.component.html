@@ -1,3 +1,6 @@
-<hello name="Oc Cho"></hello>
+<hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
-<author-list></author-list>
+<input type="text" [(ngModel)]="name" />
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
+<br />
+<toggle [(checked)]="isChecked"></toggle>
