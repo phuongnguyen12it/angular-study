@@ -1,6 +1,10 @@
+{{ name }}
 <p>Start editing to see some magic happen :)</p>
 
 <p>{{ user.name }}</p>
 <p>{{ user.age }}</p>
 
 <input [type]="inputType" [value]="user.name" />
+<button type="button" (click)="handler($event)">Click me</button>
+<br /><br />
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
