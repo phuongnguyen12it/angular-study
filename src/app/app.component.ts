@@ -10,4 +10,6 @@ export class AppComponent {
   show = false;
   isDanger = false;
   isWarning = false;
+  currentProgress = 70;
+  currentProgressColor = 'dodgerBlue';
 }

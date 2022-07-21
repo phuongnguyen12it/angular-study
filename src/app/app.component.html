@@ -1,36 +1,12 @@
-<hello [name]="name"></hello>
-<p
-  [style.color]="'red'"
-  [style.backgroundColor]="'yellow'"
-  [style.fontSize.rem]="1.5"
+<p>Start editing to see some magic happen :)</p>
+<button
+  (click)="currentProgress < 100 ? (currentProgress = currentProgress + 1) : ''"
 >
-  Stype and class binding
-</p>
-
-<p [style]="{ color: 'white', backgroundColor: 'blue', fontSize: '2rem' }">
-  Stype and class binding object
-</p>
-
-<p
-  [style.--text-color]="isDanger ? 'red' : 'white'"
-  [style]="{
-    color: 'var(--text-color)',
-    backgroundColor: 'blue',
-    fontSize: '2rem'
-  }"
->
-  Stype and class binding object
-</p>
-
-<button (click)="isDanger = !isDanger">Toggle Danger</button> <br /><br />
-<button (click)="isWarning = !isWarning">Toggle Warning</button>
-<div class="box" [class]="['red-border', 'yellow-background']"></div>
-<div
-  class="box"
-  [class.red-border]="isDanger"
-  [class.yellow-background]="isWarning"
-></div>
-<div
-  class="box"
-  [class]="{ 'red-border': isDanger, 'yellow-background': isWarning }"
-></div>
+  Increase Progress
+</button>
+<br />
+<progress-bar></progress-bar><br />
+<progress-bar
+  [progress]="currentProgress"
+  [progress-color]="currentProgressColor"
+></progress-bar>
