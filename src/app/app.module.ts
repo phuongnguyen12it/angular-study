@@ -8,6 +8,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AuthorListComponent } from './authors/author-list/author-list.component';
 import { AuthorDetailsComponent } from './authors/author-details/author-details.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { TabComponent } from './tag/tab.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -18,6 +19,7 @@ import { ToggleComponent } from './toggle/toggle.component';
     AuthorListComponent,
     AuthorDetailsComponent,
     ToggleComponent,
+    TabComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -9,9 +9,6 @@ import { ToggleComponent } from './toggle/toggle.component';
 export class AppComponent {
   nameInput: ElementRef<HTMLInputElement>;
   name = 'Angular ' + VERSION.major;
-  isChecked = true;
-  question = {
-    question1: true,
-    question2: false,
-  };
+  counter = 1;
+  navs = ['Active', 'Link 1', 'Link 2'];
 }

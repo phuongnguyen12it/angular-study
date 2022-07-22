@@ -1,0 +1,12 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item" *ngFor="let link of navs">
+    <a class="nav-link" href="#"
+      ><ng-container *ngIf="linkTemplate; else noTemplate">
+        <ng-container
+          *ngTemplateOutlet="linkTemplate; context: { link1: link }"
+        ></ng-container>
+      </ng-container>
+      <ng-template #noTemplate>{{ link }}</ng-template>
+    </a>
+  </li>
+</ul>
