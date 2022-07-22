@@ -13,8 +13,8 @@
 }
 
 .toggle-wraper:active {
-  width: 95px;
-  height: 95px;
+  /* width: 95px;
+  height: 95px; */
   box-shadow: 0 15px 15px 0 rgba(#fe4551, 0.5);
 }
 

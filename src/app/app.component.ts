@@ -7,17 +7,11 @@ import { ToggleComponent } from './toggle/toggle.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @ViewChild('toggleCompFromHtml') toggleComp: ToggleComponent;
-  @ViewChild('nameInput', {static:true}) nameInput: ElementRef<HTMLInputElement>;
+  nameInput: ElementRef<HTMLInputElement>;
   name = 'Angular ' + VERSION.major;
   isChecked = true;
-  ngOnInit() {
-    this.nameInput.nativeElement.focus();
-  }
-  ngAfterViewInit() {
-    console.log(this.toggleComp);
-    // apiCall.subscribe(() => {
-    //   this.toggleComp.toggle();
-    // });
-  }
+  question = {
+    question1: true,
+    question2: false,
+  };
 }
