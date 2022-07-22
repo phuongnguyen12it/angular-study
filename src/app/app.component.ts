@@ -12,8 +12,8 @@ export class AppComponent {
   isChecked = true;
   ngAfterViewInit = () => {
     console.log(this.toggleComp);
-    // apiCall.subscribe(() => {
-    //   this.toggleComp.toggle('111');
-    // });
+    apiCall.subscribe(() => {
+      this.toggleComp.toggle();
+    });
   };
 }
