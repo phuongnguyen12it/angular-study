@@ -1,4 +1,4 @@
-import { Component, VERSION, ViewChild } from '@angular/core';
+import { Component, ElementRef, VERSION, ViewChild } from '@angular/core';
 import { ToggleComponent } from './toggle/toggle.component';
 
 @Component({
@@ -8,12 +8,16 @@ import { ToggleComponent } from './toggle/toggle.component';
 })
 export class AppComponent {
   @ViewChild('toggleCompFromHtml') toggleComp: ToggleComponent;
+  @ViewChild('nameInput', {static:true}) nameInput: ElementRef<HTMLInputElement>;
   name = 'Angular ' + VERSION.major;
   isChecked = true;
-  ngAfterViewInit = () => {
+  ngOnInit() {
+    this.nameInput.nativeElement.focus();
+  }
+  ngAfterViewInit() {
     console.log(this.toggleComp);
-    apiCall.subscribe(() => {
-      this.toggleComp.toggle();
-    });
-  };
+    // apiCall.subscribe(() => {
+    //   this.toggleComp.toggle();
+    // });
+  }
 }

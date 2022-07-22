@@ -1,7 +1,7 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
-<input type="text" [(ngModel)]="name" />
-<input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
+<input type="text" [(ngModel)]="name" #nameInput />
+<!-- <input type="text" [ngModel]="name" (ngModelChange)="name = $event" /> -->
 <br />
 <!-- togleComp là instan của ToggleComponent -->
 <toggle [(checked)]="isChecked" #toggleCompFromHtml></toggle>
