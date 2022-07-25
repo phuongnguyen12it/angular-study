@@ -1,39 +1,52 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 
-<!-- <tab-group [(activeIndex)]="currentIndex">
-	<tab-panel title="First tab">First tab content</tab-panel>
-	<tab-panel title="Second tab">Second tab content</tab-panel>
-	<tab-panel title="Third tab">Third tab content</tab-panel>
-	<tab-panel title="Fourth tab">Fourth tab content</tab-panel>
-</tab-group> -->
+<!-- date pipe -->
+<!-- <p>{{ currentDate | date }}</p>
+<p>{{ currentDate | date: 'shortDate' }}</p>
+<p>{{ currentDate | date: 'mediumDate' }}</p>
+<p>{{ currentDate | date: 'fullDate' }}</p>
+<p>{{ currentDate | date: 'yyyy-MM-dd' }}</p> -->
 
-<button class="btn btn-primary" (click)="showTab4 = !showTab4">
-  Toggle tab 4
-</button>
-<tab-bs-group [(activeIndex)]="currentIndex">
-  <tab-panel title="First tab" [cache]="true">
-    <ng-template tabContent>
-      First tab content
-      <counter></counter>
-    </ng-template>
-  </tab-panel>
-  <tab-panel title="Second tab" [cache]="true">
-    <ng-template tabContent>
-      Second tab content
-      <counter></counter>
-    </ng-template>
-  </tab-panel>
-  <tab-panel title="Third tab" [cache]="true">
-    <ng-template tabContent>
-      Third tab content
-      <counter></counter>
-    </ng-template>
-  </tab-panel>
-  <tab-panel title="Fourth tab" [cache]="true" *ngIf="showTab4">
-    <ng-template tabContent>
-      Fourth tab content
-      <counter></counter>
-    </ng-template>
-  </tab-panel>
-</tab-bs-group>
+<!-- <p>{{ 'Phuong' | lowercase }}</p>
+<p>{{ 'Phuong' | uppercase }}</p> -->
+
+<!-- currency pipe -->
+<!-- <p>{{ 250 | currency }}</p>
+<p>{{ 250000 | currency: 'VND' }}</p> -->
+
+<!-- number pipe -->
+<!-- <p>{{ 2.23123123 | number: '1.12' }}</p> -->
+<!-- <p>{{ 0.57 | precent }}</p> -->
+
+<!-- <p>{{ user | json }}</p> -->
+
+<!-- {{ interval$ | async }} -->
+
+<!-- {{
+  addr.address1 +
+    ' ' +
+    addr.address2 +
+    ' ' +
+    addr.city +
+    ', ' +
+    addr.state +
+    ' ' +
+    addr.zip +
+    ', ' +
+    addr.country
+}} -->
+
+<!-- <p>{{ formatAddress(addr) }}</p> -->
+<p>{{ addr | formatAddress: 'para1' }}</p>
+Full user list:
+<ul>
+  <li *ngFor="let u of users">{{ u.name }} - {{ u.age }}</li>
+</ul>
+
+Add user list:
+<ul>
+  <li *ngFor="let u of users | adult">{{ u.name }} - {{ u.age }}</li>
+</ul>
+
+<button (click)="addUser()">Add User</button>
