@@ -12,6 +12,7 @@ import { TabComponent } from './tag/tab.component';
 import { TabGroupComponent } from './tabs/tab-group/tab-group.component';
 import { TabPanelComponent } from './tabs/tab-panel/tab-panel.component';
 import { TabBsGroupComponent } from './tabs/tab-bs-group/tab-bs-group.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -26,6 +27,7 @@ import { TabBsGroupComponent } from './tabs/tab-bs-group/tab-bs-group.component'
     TabPanelComponent,
     TabGroupComponent,
     TabBsGroupComponent,
+    CounterComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -8,8 +8,16 @@
 </tab-group> -->
 
 <tab-bs-group [(activeIndex)]="currentIndex">
-  <tab-panel title="first tab">First tab content</tab-panel>
-  <tab-panel title="second tab">Second tab content</tab-panel>
-  <tab-panel title="third tab">Third tab content</tab-panel>
-  <tab-panel title="fourth tab">Fourth tab content</tab-panel>
+  <tab-panel title="First tab">
+    <ng-template>First tab content <counter></counter></ng-template>
+  </tab-panel>
+  <tab-panel title="Second tab">
+    <ng-template>Second tab content <counter></counter></ng-template>
+  </tab-panel>
+  <tab-panel title="Third tab">
+    <ng-template>Third tab content <counter></counter></ng-template>
+  </tab-panel>
+  <tab-panel title="Fourth tab">
+    <ng-template>Fourth tab content <counter></counter></ng-template>
+  </tab-panel>
 </tab-bs-group>
