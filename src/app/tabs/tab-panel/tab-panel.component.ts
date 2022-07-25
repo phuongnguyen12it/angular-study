@@ -53,6 +53,6 @@ export class TabPanelComponent {
   }
 
   ngOnDestroy() {
-    // this.tabGroup.removeTab(this);
+    this.tabGroup.removeTab(this);
   }
 }
