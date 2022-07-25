@@ -1,4 +1,10 @@
-import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ContentChild,
+  Input,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { TabGroupComponent } from '../tab-group/tab-group.component';
 
 @Component({
@@ -8,9 +14,15 @@ import { TabGroupComponent } from '../tab-group/tab-group.component';
 })
 export class TabPanelComponent {
   @Input() title: string;
-  @ViewChild(TemplateRef, { static: true }) panelBody: TemplateRef<unknown>;
+  @ViewChild(TemplateRef, { static: true }) implicitBody: TemplateRef<unknown>;
+  @ContentChild(TemplateRef, { static: true })
+  explicitBody: TemplateRef<unknown>;
   constructor(private tabGroup: TabGroupComponent) {}
+  get panelBody(): TemplateRef<unknown> {
+    return this.implicitBody;
+  }
   ngOnInit() {
-    this.tabGroup.addTab(this); 
+    console.log(this.explicitBody);
+    this.tabGroup.addTab(this);
   }
 }

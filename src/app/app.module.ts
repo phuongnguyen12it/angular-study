@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
@@ -25,8 +24,8 @@ import { CounterComponent } from './counter/counter.component';
     ToggleComponent,
     TabComponent,
     TabPanelComponent,
-    TabGroupComponent,
     TabBsGroupComponent,
+    TabGroupComponent,
     CounterComponent,
   ],
   bootstrap: [AppComponent],
