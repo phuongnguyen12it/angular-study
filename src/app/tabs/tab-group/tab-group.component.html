@@ -6,12 +6,14 @@
     (click)="activeIndexChange.emit(idx)"
   >
     {{ tab.title }}
-    <button (click)="removeTab(tab)">X</button>
+    <button (click)="removeTab(tab)">x</button>
   </div>
-  <div class="tab-body" *ngIf="tabPanelList.length; else noTabs">
-    <ng-container
-      *ngTemplateOutlet="tabPanelList[activeIndex].panelBody"
-    ></ng-container>
-  </div>
-  <ng-template #noTabs>No tabs more </ng-template>
 </div>
+
+<div class="tab-body" *ngIf="tabPanelList.length; else noTabs">
+  <ng-container
+    *ngTemplateOutlet="tabPanelList[activeIndex].panelBody"
+  ></ng-container>
+</div>
+
+<ng-template #noTabs> No more tabs. </ng-template>

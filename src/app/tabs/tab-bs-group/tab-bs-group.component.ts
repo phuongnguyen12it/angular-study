@@ -12,4 +12,10 @@ import { TabGroupComponent } from '../tab-group/tab-group.component';
     },
   ],
 })
-export class TabBsGroupComponent extends TabGroupComponent {}
+export class TabBsGroupComponent extends TabGroupComponent {
+  onTabClicked(idx: number) {
+    this.tabPanelList.find((tab) => tab.selected).selected = false;
+    this.tabPanelList[idx].selected = true;
+    this.activeIndexChange.emit(idx);
+  }
+}

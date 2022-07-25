@@ -10,4 +10,5 @@ export class AppComponent {
   nameInput: ElementRef<HTMLInputElement>;
   name = 'Angular ' + VERSION.major;
   currentIndex = -1;
+  showTab4 = true;
 }

@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ContentChildren,
+  QueryList,
+} from '@angular/core';
 import { TabPanelComponent } from '../tab-panel/tab-panel.component';
 
 @Component({
@@ -11,9 +18,16 @@ export class TabGroupComponent {
   @Input() activeIndex = 0;
   @Output() activeIndexChange = new EventEmitter<number>();
 
+  @ContentChildren(TabPanelComponent) tabPanels: QueryList<TabPanelComponent>;
+
+  ngAfterContentInit() {
+    console.log(this.tabPanels);
+    this.tabPanels.changes.subscribe(console.log);
+  }
+
   addTab(tab: TabPanelComponent) {
     this.tabPanelList = [...this.tabPanelList, tab];
-    //OR this.tabPaneList.push();
+    this.tabPanelList[this.activeIndex].selected = true;
   }
 
   removeTab(tab: TabPanelComponent) {
@@ -25,7 +39,8 @@ export class TabGroupComponent {
       }
       return true;
     });
-    if (found == this.activeIndex) {
+
+    if (found === this.activeIndex) {
       this.activeIndexChange.emit(
         found === this.tabPanelList.length ? found - 1 : found
       );
