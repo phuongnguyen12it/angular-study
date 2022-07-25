@@ -9,6 +9,5 @@ import { ToggleComponent } from './toggle/toggle.component';
 export class AppComponent {
   nameInput: ElementRef<HTMLInputElement>;
   name = 'Angular ' + VERSION.major;
-  counter = 1;
-  navs = ['Active', 'Link 1', 'Link 2'];
+  currentIndex = 0;
 }

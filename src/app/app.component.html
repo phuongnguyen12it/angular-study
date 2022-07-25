@@ -1,24 +1,15 @@
 <hello [name]="name"></hello>
 <p>Start editing to see some magic happen :)</p>
-<div class="card">
-  <div class="card-header">
-    You have selected
-    <ng-container [ngTemplateOutlet]="counterTml"></ng-container>.
-  </div>
-  <div class="card-body">
-    There are
-    <ng-container [ngTemplateOutlet]="counterTml"></ng-container> was selected.
-  </div>
-  <div class="card-footer">
-    You have selected
-    <ng-container [ngTemplateOutlet]="counterTml"></ng-container>.
-  </div>
-</div>
+<tab-group [(activeIndex)]="currentIndex">
+  <tab-panel title="first tab">First tab content</tab-panel>
+  <tab-panel title="second tab">Second tab content</tab-panel>
+  <tab-panel title="third tab">Third tab content</tab-panel>
+  <tab-panel title="fourth tab">Fourth tab content</tab-panel>
+</tab-group>
 
-<ng-template #counterTml
-  ><span class="badge badge-danger">{{ counter }}</span> items</ng-template
->
-<ng-template #linkTemplate let-l="link1"
-  ><h4>{{ l }}</h4></ng-template
->
-<tab [navs]="navs" [linkTemplate]="linkTemplate"></tab>
+<tab-bs-group [(activeIndex)]="currentIndex">
+  <tab-panel title="first tab">First tab content</tab-panel>
+  <tab-panel title="second tab">Second tab content</tab-panel>
+  <tab-panel title="third tab">Third tab content</tab-panel>
+  <tab-panel title="fourth tab">Fourth tab content</tab-panel>
+</tab-bs-group>

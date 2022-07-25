@@ -9,6 +9,9 @@ import { AuthorListComponent } from './authors/author-list/author-list.component
 import { AuthorDetailsComponent } from './authors/author-details/author-details.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { TabComponent } from './tag/tab.component';
+import { TabGroupComponent } from './tabs/tab-group/tab-group.component';
+import { TabPanelComponent } from './tabs/tab-panel/tab-panel.component';
+import { TabBsGroupComponent } from './tabs/tab-bs-group/tab-bs-group.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -20,6 +23,9 @@ import { TabComponent } from './tag/tab.component';
     AuthorDetailsComponent,
     ToggleComponent,
     TabComponent,
+    TabPanelComponent,
+    TabGroupComponent,
+    TabBsGroupComponent,
   ],
   bootstrap: [AppComponent],
 })
