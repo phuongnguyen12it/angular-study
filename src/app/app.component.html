@@ -1,52 +1,16 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 
-<!-- date pipe -->
-<!-- <p>{{ currentDate | date }}</p>
-<p>{{ currentDate | date: 'shortDate' }}</p>
-<p>{{ currentDate | date: 'mediumDate' }}</p>
-<p>{{ currentDate | date: 'fullDate' }}</p>
-<p>{{ currentDate | date: 'yyyy-MM-dd' }}</p> -->
-
-<!-- <p>{{ 'Phuong' | lowercase }}</p>
-<p>{{ 'Phuong' | uppercase }}</p> -->
-
-<!-- currency pipe -->
-<!-- <p>{{ 250 | currency }}</p>
-<p>{{ 250000 | currency: 'VND' }}</p> -->
-
-<!-- number pipe -->
-<!-- <p>{{ 2.23123123 | number: '1.12' }}</p> -->
-<!-- <p>{{ 0.57 | precent }}</p> -->
-
-<!-- <p>{{ user | json }}</p> -->
-
-<!-- {{ interval$ | async }} -->
-
-<!-- {{
-  addr.address1 +
-    ' ' +
-    addr.address2 +
-    ' ' +
-    addr.city +
-    ', ' +
-    addr.state +
-    ' ' +
-    addr.zip +
-    ', ' +
-    addr.country
-}} -->
-
-<!-- <p>{{ formatAddress(addr) }}</p> -->
-<p>{{ addr | formatAddress: 'para1' }}</p>
-Full user list:
-<ul>
-  <li *ngFor="let u of users">{{ u.name }} - {{ u.age }}</li>
+<input type="text" [formControl]="queryControl" placeholder="Search..." />
+<br />
+<p *ngIf="loading">
+  Loading
+  {{
+    queryControl.value ? 'with query: "' + queryControl.value + '"...' : '...'
+  }}
+</p>
+<ul *ngIf="!loading">
+  <li *ngFor="let user of users">
+    <pre>{{ user | json }}</pre>
+  </li>
 </ul>
-
-Add user list:
-<ul>
-  <li *ngFor="let u of users | adult">{{ u.name }} - {{ u.age }}</li>
-</ul>
-
-<button (click)="addUser()">Add User</button>
